@@ -1,0 +1,6 @@
+create_table "firms"  do |t|
+  t.string "name"
+  t.boolean "active"
+  t.datetime "created_at",  null: false
+  t.datetime "updated_at",  null: false
+end
