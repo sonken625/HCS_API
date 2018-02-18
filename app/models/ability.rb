@@ -10,6 +10,7 @@ class Ability
       can :manage, :all
     elsif hct.normal?
       can :read, Firm, active: true
+      can [:read, :create,:update], QueryDefinition, hct_id:hct.id
     end
 
     #   else
