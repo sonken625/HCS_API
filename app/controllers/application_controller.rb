@@ -2,6 +2,8 @@
 class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Basic::ControllerMethods
   include ActionController::HttpAuthentication::Token::ControllerMethods
+  include ActionController::MimeResponds
+
   # トークンによる認証
   before_action :authenticate_user_from_token!
 
