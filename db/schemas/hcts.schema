@@ -1,12 +1,12 @@
 create_table :hcts do |t|
   ## Database authenticatabl
   t.integer :role,null:false
-  t.references "firm", foreign_key: true
+  t.references "firm", foreign_key: true, null:false
   t.datetime "created_at",  null: false
   t.datetime "updated_at",  null: false
 
   ## 認証トークン
-  t.string :authentication_token, unique:true
+  t.string :authentication_token, unique:true,null:false
 
   ## Rememberable
   t.datetime :remember_created_at

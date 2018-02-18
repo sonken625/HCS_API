@@ -23,7 +23,7 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe QueriesController, type: :controller do
+RSpec.describe QueryDefinitionsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Query. As you add validations to Query, be sure to
@@ -43,7 +43,7 @@ RSpec.describe QueriesController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
-      query = Query.create! valid_attributes
+      query = QueryDefinition.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -51,7 +51,7 @@ RSpec.describe QueriesController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      query = Query.create! valid_attributes
+      query = QueryDefinition.create! valid_attributes
       get :show, params: {id: query.to_param}, session: valid_session
       expect(response).to be_success
     end
@@ -61,23 +61,23 @@ RSpec.describe QueriesController, type: :controller do
     context "with valid params" do
       it "creates a new Query" do
         expect {
-          post :create, params: {query: valid_attributes}, session: valid_session
-        }.to change(Query, :count).by(1)
+          post :create, params: {query_definition: valid_attributes}, session: valid_session
+        }.to change(QueryDefinition, :count).by(1)
       end
 
       it "renders a JSON response with the new query" do
 
-        post :create, params: {query: valid_attributes}, session: valid_session
+        post :create, params: {query_definition: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('application/json')
-        expect(response.location).to eq(query_url(Query.last))
+        expect(response.location).to eq(requestQuery_url(QueryDefinition.last))
       end
     end
 
     context "with invalid params" do
       it "renders a JSON response with errors for the new query" do
 
-        post :create, params: {query: invalid_attributes}, session: valid_session
+        post :create, params: {query_definition: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -91,16 +91,16 @@ RSpec.describe QueriesController, type: :controller do
       }
 
       it "updates the requested query" do
-        query = Query.create! valid_attributes
-        put :update, params: {id: query.to_param, query: new_attributes}, session: valid_session
+        query = QueryDefinition.create! valid_attributes
+        put :update, params: {id: query.to_param, query_definition: new_attributes}, session: valid_session
         query.reload
         skip("Add assertions for updated state")
       end
 
       it "renders a JSON response with the query" do
-        query = Query.create! valid_attributes
+        query = QueryDefinition.create! valid_attributes
 
-        put :update, params: {id: query.to_param, query: valid_attributes}, session: valid_session
+        put :update, params: {id: query.to_param, query_definition: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to eq('application/json')
       end
@@ -108,9 +108,9 @@ RSpec.describe QueriesController, type: :controller do
 
     context "with invalid params" do
       it "renders a JSON response with errors for the query" do
-        query = Query.create! valid_attributes
+        query = QueryDefinition.create! valid_attributes
 
-        put :update, params: {id: query.to_param, query: invalid_attributes}, session: valid_session
+        put :update, params: {id: query.to_param, query_definition: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -119,10 +119,10 @@ RSpec.describe QueriesController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested query" do
-      query = Query.create! valid_attributes
+      query = QueryDefinition.create! valid_attributes
       expect {
         delete :destroy, params: {id: query.to_param}, session: valid_session
-      }.to change(Query, :count).by(-1)
+      }.to change(QueryDefinition, :count).by(-1)
     end
   end
 

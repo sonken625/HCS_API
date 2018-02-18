@@ -1,8 +1,0 @@
-create_table :queries do |t|
-  t.string :search_key
-  t.references :hcts_id,foreign_key:true
-  t.integer :protocol_type
-
-  t.datetime "created_at",  null: false
-  t.datetime "updated_at",  null: false
-end
