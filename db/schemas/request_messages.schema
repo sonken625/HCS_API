@@ -1,0 +1,13 @@
+create_table :request_messages do |t|
+  t.references :query_definition,null:false
+  t.references :sender_hct,index:true
+
+  t.string :message_unique_id ,null:false
+
+  t.datetime "created_at",  null: false
+  t.datetime "updated_at",  null: false
+  t.index :message_unique_id,unique:true
+end
+
+add_foreign_key :request_messages,:query_definitions
+add_foreign_key :request_messages,:hcts,column: :sender_hct_id
