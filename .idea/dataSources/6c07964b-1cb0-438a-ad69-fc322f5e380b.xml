@@ -46,8 +46,8 @@
     </role>
     <schema id="10" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-02-18.11:26:44.367</IntrospectionTimestamp>
-      <IntrospectionStateNumber>22944</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-02-26.23:41:55.447</IntrospectionTimestamp>
+      <IntrospectionStateNumber>23938</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -66,9 +66,9 @@
     <schema id="15" parent="2" name="information_schema">
       <ObjectId>12087</ObjectId>
     </schema>
-    <sequence id="16" parent="10" name="query_definitions_id_seq">
-      <ObjectId>43767</ObjectId>
-      <StateNumber>22941</StateNumber>
+    <sequence id="16" parent="10" name="response_messages_id_seq">
+      <ObjectId>65536</ObjectId>
+      <StateNumber>23928</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
@@ -101,35 +101,57 @@
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
     </sequence>
-    <table id="21" parent="10" name="active_storage_attachments">
+    <sequence id="21" parent="10" name="query_definitions_id_seq">
+      <ObjectId>43767</ObjectId>
+      <StateNumber>22941</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="22" parent="10" name="request_messages_id_seq">
+      <ObjectId>57346</ObjectId>
+      <StateNumber>23880</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="23" parent="10" name="active_storage_attachments">
       <ObjectId>32801</ObjectId>
       <StateNumber>22132</StateNumber>
     </table>
-    <table id="22" parent="10" name="active_storage_blobs">
+    <table id="24" parent="10" name="active_storage_blobs">
       <ObjectId>32789</ObjectId>
       <StateNumber>22132</StateNumber>
     </table>
-    <table id="23" parent="10" name="ar_internal_metadata">
+    <table id="25" parent="10" name="ar_internal_metadata">
       <ObjectId>32779</ObjectId>
       <StateNumber>22131</StateNumber>
     </table>
-    <table id="24" parent="10" name="firms">
+    <table id="26" parent="10" name="firms">
       <ObjectId>40962</ObjectId>
-      <StateNumber>22134</StateNumber>
+      <StateNumber>23904</StateNumber>
     </table>
-    <table id="25" parent="10" name="hcts">
+    <table id="27" parent="10" name="hcts">
       <ObjectId>40973</ObjectId>
-      <StateNumber>22151</StateNumber>
+      <StateNumber>23937</StateNumber>
     </table>
-    <table id="26" parent="10" name="query_definitions">
+    <table id="28" parent="10" name="query_definitions">
       <ObjectId>43769</ObjectId>
-      <StateNumber>22941</StateNumber>
+      <StateNumber>23933</StateNumber>
     </table>
-    <table id="27" parent="10" name="schema_migrations">
+    <table id="29" parent="10" name="request_messages">
+      <ObjectId>57348</ObjectId>
+      <StateNumber>23938</StateNumber>
+    </table>
+    <table id="30" parent="10" name="response_messages">
+      <ObjectId>65538</ObjectId>
+      <StateNumber>23938</StateNumber>
+    </table>
+    <table id="31" parent="10" name="schema_migrations">
       <ObjectId>32771</ObjectId>
       <StateNumber>22130</StateNumber>
     </table>
-    <column id="28" parent="21" name="id">
+    <column id="32" parent="23" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -138,47 +160,47 @@
       <TypeId>20</TypeId>
       <SequenceName>active_storage_attachments_id_seq</SequenceName>
     </column>
-    <column id="29" parent="21" name="name">
+    <column id="33" parent="23" name="name">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="30" parent="21" name="record_type">
+    <column id="34" parent="23" name="record_type">
       <Position>3</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="31" parent="21" name="record_id">
+    <column id="35" parent="23" name="record_id">
       <Position>4</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="32" parent="21" name="blob_id">
+    <column id="36" parent="23" name="blob_id">
       <Position>5</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="33" parent="21" name="created_at">
+    <column id="37" parent="23" name="created_at">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="34" parent="21" name="active_storage_attachments_pkey">
+    <index id="38" parent="23" name="active_storage_attachments_pkey">
       <ObjectId>32808</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="35" parent="21" name="index_active_storage_attachments_uniqueness">
+    <index id="39" parent="23" name="index_active_storage_attachments_uniqueness">
       <ObjectId>32811</ObjectId>
       <ColNames>record_type
 record_id
@@ -186,17 +208,17 @@ name
 blob_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="36" parent="21" name="index_active_storage_attachments_on_blob_id">
+    <index id="40" parent="23" name="index_active_storage_attachments_on_blob_id">
       <ObjectId>32810</ObjectId>
       <ColNames>blob_id</ColNames>
     </index>
-    <key id="37" parent="21" name="active_storage_attachments_pkey">
+    <key id="41" parent="23" name="active_storage_attachments_pkey">
       <ObjectId>32809</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>active_storage_attachments_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="38" parent="22" name="id">
+    <column id="42" parent="24" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -205,108 +227,108 @@ blob_id</ColNames>
       <TypeId>20</TypeId>
       <SequenceName>active_storage_blobs_id_seq</SequenceName>
     </column>
-    <column id="39" parent="22" name="key">
+    <column id="43" parent="24" name="key">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="40" parent="22" name="filename">
+    <column id="44" parent="24" name="filename">
       <Position>3</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="41" parent="22" name="content_type">
+    <column id="45" parent="24" name="content_type">
       <Position>4</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>22132</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="42" parent="22" name="metadata">
+    <column id="46" parent="24" name="metadata">
       <Position>5</Position>
       <DataType>text|0</DataType>
       <StateNumber>22132</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="43" parent="22" name="byte_size">
+    <column id="47" parent="24" name="byte_size">
       <Position>6</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="44" parent="22" name="checksum">
+    <column id="48" parent="24" name="checksum">
       <Position>7</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="45" parent="22" name="created_at">
+    <column id="49" parent="24" name="created_at">
       <Position>8</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22132</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="46" parent="22" name="active_storage_blobs_pkey">
+    <index id="50" parent="24" name="active_storage_blobs_pkey">
       <ObjectId>32796</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="47" parent="22" name="index_active_storage_blobs_on_key">
+    <index id="51" parent="24" name="index_active_storage_blobs_on_key">
       <ObjectId>32798</ObjectId>
       <ColNames>key</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="48" parent="22" name="active_storage_blobs_pkey">
+    <key id="52" parent="24" name="active_storage_blobs_pkey">
       <ObjectId>32797</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>active_storage_blobs_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="49" parent="23" name="key">
+    <column id="53" parent="25" name="key">
       <Position>1</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22131</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="50" parent="23" name="value">
+    <column id="54" parent="25" name="value">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>22131</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="51" parent="23" name="created_at">
+    <column id="55" parent="25" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22131</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="52" parent="23" name="updated_at">
+    <column id="56" parent="25" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22131</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="53" parent="23" name="ar_internal_metadata_pkey">
+    <index id="57" parent="25" name="ar_internal_metadata_pkey">
       <ObjectId>32785</ObjectId>
       <ColNames>key</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="54" parent="23" name="ar_internal_metadata_pkey">
+    <key id="58" parent="25" name="ar_internal_metadata_pkey">
       <ObjectId>32786</ObjectId>
       <ColNames>key</ColNames>
       <UnderlyingIndexName>ar_internal_metadata_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="55" parent="24" name="id">
+    <column id="59" parent="26" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -315,44 +337,46 @@ blob_id</ColNames>
       <TypeId>20</TypeId>
       <SequenceName>firms_id_seq</SequenceName>
     </column>
-    <column id="56" parent="24" name="name">
+    <column id="60" parent="26" name="name">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
-      <StateNumber>22134</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>23382</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="57" parent="24" name="active">
+    <column id="61" parent="26" name="active">
       <Position>3</Position>
       <DataType>boolean|0</DataType>
-      <StateNumber>22134</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>23383</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="58" parent="24" name="created_at">
+    <column id="62" parent="26" name="created_at">
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22134</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="59" parent="24" name="updated_at">
+    <column id="63" parent="26" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22134</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="60" parent="24" name="firms_pkey">
+    <index id="64" parent="26" name="firms_pkey">
       <ObjectId>40969</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="61" parent="24" name="firms_pkey">
+    <key id="65" parent="26" name="firms_pkey">
       <ObjectId>40970</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>firms_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="62" parent="25" name="id">
+    <column id="66" parent="27" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -361,41 +385,41 @@ blob_id</ColNames>
       <TypeId>20</TypeId>
       <SequenceName>hcts_id_seq</SequenceName>
     </column>
-    <column id="63" parent="25" name="firm_id">
+    <column id="67" parent="27" name="firm_id">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>22943</StateNumber>
+      <StateNumber>23895</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="64" parent="25" name="created_at">
+    <column id="68" parent="27" name="created_at">
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22135</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="65" parent="25" name="updated_at">
+    <column id="69" parent="27" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22135</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="66" parent="25" name="authentication_token">
+    <column id="70" parent="27" name="authentication_token">
       <Position>8</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>22944</StateNumber>
+      <StateNumber>23932</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="67" parent="25" name="remember_created_at">
+    <column id="71" parent="27" name="remember_created_at">
       <Position>11</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>22142</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="68" parent="25" name="sign_in_count">
+    <column id="72" parent="27" name="sign_in_count">
       <Position>12</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -403,53 +427,62 @@ blob_id</ColNames>
       <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="69" parent="25" name="current_sign_in_at">
+    <column id="73" parent="27" name="current_sign_in_at">
       <Position>13</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>22144</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="70" parent="25" name="last_sign_in_at">
+    <column id="74" parent="27" name="last_sign_in_at">
       <Position>14</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>22145</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="71" parent="25" name="current_sign_in_ip">
+    <column id="75" parent="27" name="current_sign_in_ip">
       <Position>15</Position>
       <DataType>inet|0</DataType>
       <StateNumber>22146</StateNumber>
       <TypeId>869</TypeId>
     </column>
-    <column id="72" parent="25" name="last_sign_in_ip">
+    <column id="76" parent="27" name="last_sign_in_ip">
       <Position>16</Position>
       <DataType>inet|0</DataType>
       <StateNumber>22147</StateNumber>
       <TypeId>869</TypeId>
     </column>
-    <column id="73" parent="25" name="role">
+    <column id="77" parent="27" name="role">
       <Position>17</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22151</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="74" parent="25" name="hcts_pkey">
+    <index id="78" parent="27" name="hcts_pkey">
       <ObjectId>40980</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="75" parent="25" name="index_hcts_on_firm_id">
-      <ObjectId>43779</ObjectId>
+    <index id="79" parent="27" name="index_hcts_on_firm_id">
+      <ObjectId>57378</ObjectId>
       <ColNames>firm_id</ColNames>
     </index>
-    <key id="76" parent="25" name="hcts_pkey">
+    <key id="80" parent="27" name="hcts_pkey">
       <ObjectId>40981</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>hcts_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="77" parent="26" name="id">
+    <foreign-key id="81" parent="27" name="fk_rails_f7213c3f44">
+      <ObjectId>57391</ObjectId>
+      <ColNames>firm_id</ColNames>
+      <RefTableId>40962</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>firms</RefTableName>
+      <RefKeyName>firms_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="82" parent="28" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -458,69 +491,237 @@ blob_id</ColNames>
       <TypeId>20</TypeId>
       <SequenceName>query_definitions_id_seq</SequenceName>
     </column>
-    <column id="78" parent="26" name="search_key">
+    <column id="83" parent="28" name="search_key">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22941</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="79" parent="26" name="hct_id">
+    <column id="84" parent="28" name="hct_id">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>22941</StateNumber>
+      <StateNumber>23933</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="80" parent="26" name="protocol_type">
+    <column id="85" parent="28" name="protocol_type">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22941</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="81" parent="26" name="created_at">
+    <column id="86" parent="28" name="created_at">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22941</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="82" parent="26" name="updated_at">
+    <column id="87" parent="28" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22941</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="83" parent="26" name="query_definitions_pkey">
+    <index id="88" parent="28" name="query_definitions_pkey">
       <ObjectId>43776</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="84" parent="26" name="index_query_definitions_on_hct_id">
-      <ObjectId>43778</ObjectId>
+    <index id="89" parent="28" name="index_query_definitions_on_hct_id">
+      <ObjectId>65554</ObjectId>
       <ColNames>hct_id</ColNames>
     </index>
-    <key id="85" parent="26" name="query_definitions_pkey">
+    <key id="90" parent="28" name="query_definitions_pkey">
       <ObjectId>43777</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>query_definitions_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="86" parent="27" name="version">
+    <foreign-key id="91" parent="28" name="fk_rails_f7484aa0e0">
+      <ObjectId>65555</ObjectId>
+      <ColNames>hct_id</ColNames>
+      <RefTableId>40973</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>hcts</RefTableName>
+      <RefKeyName>hcts_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="92" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23880</StateNumber>
+      <DefaultExpression>nextval(&apos;request_messages_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>request_messages_id_seq</SequenceName>
+    </column>
+    <column id="93" parent="29" name="query_definition_id">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23892</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="94" parent="29" name="sender_hct_id">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>23880</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="95" parent="29" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23880</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="96" parent="29" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23880</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="97" parent="29" name="message_unique_id">
+      <Position>7</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23914</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="98" parent="29" name="request_messages_pkey">
+      <ObjectId>57352</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="99" parent="29" name="index_request_messages_on_message_unique_id">
+      <ObjectId>57437</ObjectId>
+      <ColNames>message_unique_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="100" parent="29" name="index_request_messages_on_query_definition_id">
+      <ObjectId>57372</ObjectId>
+      <ColNames>query_definition_id</ColNames>
+    </index>
+    <index id="101" parent="29" name="index_request_messages_on_sender_hct_id">
+      <ObjectId>57355</ObjectId>
+      <ColNames>sender_hct_id</ColNames>
+    </index>
+    <key id="102" parent="29" name="request_messages_pkey">
+      <ObjectId>57353</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>request_messages_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="103" parent="29" name="fk_rails_e07e99d5b4">
+      <ObjectId>57407</ObjectId>
+      <ColNames>query_definition_id</ColNames>
+      <RefTableId>43769</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>query_definitions</RefTableName>
+      <RefKeyName>query_definitions_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="104" parent="29" name="fk_rails_0a4c25b3de">
+      <ObjectId>65561</ObjectId>
+      <ColNames>sender_hct_id</ColNames>
+      <RefTableId>40973</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>hcts</RefTableName>
+      <RefKeyName>hcts_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="105" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23928</StateNumber>
+      <DefaultExpression>nextval(&apos;response_messages_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>response_messages_id_seq</SequenceName>
+    </column>
+    <column id="106" parent="30" name="type">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23928</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="107" parent="30" name="url">
+      <Position>3</Position>
+      <DataType>varchar|0</DataType>
+      <StateNumber>23928</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="108" parent="30" name="param">
+      <Position>4</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23928</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="109" parent="30" name="created_at">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23928</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="110" parent="30" name="updated_at">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23928</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="111" parent="30" name="request_message_id">
+      <Position>8</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>23934</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="112" parent="30" name="response_messages_pkey">
+      <ObjectId>65545</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="113" parent="30" name="index_response_messages_on_request_message_id">
+      <ObjectId>65560</ObjectId>
+      <ColNames>request_message_id</ColNames>
+    </index>
+    <key id="114" parent="30" name="response_messages_pkey">
+      <ObjectId>65546</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>response_messages_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="115" parent="30" name="fk_rails_e082c702a5">
+      <ObjectId>65566</ObjectId>
+      <ColNames>request_message_id</ColNames>
+      <RefTableId>57348</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>request_messages</RefTableName>
+      <RefKeyName>request_messages_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="116" parent="31" name="version">
       <Position>1</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>22130</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="87" parent="27" name="schema_migrations_pkey">
+    <index id="117" parent="31" name="schema_migrations_pkey">
       <ObjectId>32777</ObjectId>
       <ColNames>version</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="88" parent="27" name="schema_migrations_pkey">
+    <key id="118" parent="31" name="schema_migrations_pkey">
       <ObjectId>32778</ObjectId>
       <ColNames>version</ColNames>
       <UnderlyingIndexName>schema_migrations_pkey</UnderlyingIndexName>
