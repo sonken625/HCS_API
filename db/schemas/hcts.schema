@@ -1,7 +1,7 @@
 create_table :hcts do |t|
   ## Database authenticatabl
   t.integer :role,null:false
-  t.references "firm", foreign_key: true, null:false
+  t.references "firm",  null:false
   t.datetime "created_at",  null: false
   t.datetime "updated_at",  null: false
 
@@ -29,3 +29,5 @@ create_table :hcts do |t|
   # t.string   :unlock_token # Only if unlock strategy is :email or :both
   # t.datetime :locked_at
 end
+
+add_foreign_key :hcts,:firms
