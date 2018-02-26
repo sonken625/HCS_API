@@ -1,0 +1,10 @@
+create_table :response_messages do |t|
+  t.string :type , null: false
+  t.string :url
+  t.string :param,null:false
+  t.references :request_message,null:false
+  t.datetime "created_at",  null: false
+  t.datetime "updated_at",  null: false
+end
+
+add_foreign_key :response_messages,:request_messages

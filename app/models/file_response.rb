@@ -1,0 +1,2 @@
+class FileResponse < ApplicationRecord
+end

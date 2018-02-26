@@ -1,0 +1,3 @@
+class JsonResponse < ResponseMessage
+
+end

@@ -42,6 +42,7 @@ class QueryDefinitionsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_query
       @query_definition = QueryDefinition.find_by_search_key(param[:search_key])
