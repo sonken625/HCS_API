@@ -5,14 +5,14 @@ class ResponseMessage < ApplicationRecord
   validates :type, presence: true
   validates :param, presence: true
 
-
   attribute :message_unique_id, :string
 
-  before_validation :set_request_message, if: :request_exist?
+  before_validation :set_request_message, if: :request_message_exist?
+
 
   protected
 
-  def request_exist?
+  def request_message_exist?
     unless message_unique_id.present?
       errors.add :message_unique_id, "can't be blank"
       return false

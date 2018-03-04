@@ -2,7 +2,7 @@
 
 class RequestMessage < ApplicationRecord
   belongs_to :query_definition
-  has_one :response_message, primary_key: 'message_unique_id', foreign_key: :request_message_id
+  has_many :response_message
   belongs_to :sender_hct, class_name: 'Hct'
 
   attribute :search_key, :string
@@ -11,7 +11,7 @@ class RequestMessage < ApplicationRecord
     where('id > ?', message_id) if message_id.present?
   }
 
-  scope :query_definition, lambda { |query_definition|
+  scope :search_with_query_definition, lambda { |query_definition|
     where(query_definition_id: query_definition.id)
   }
 
