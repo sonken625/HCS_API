@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Ability
   include CanCan::Ability
 
@@ -10,7 +12,18 @@ class Ability
       can :manage, :all
     elsif hct.normal?
       can :read, Firm, active: true
-      can [:read, :create,:update], QueryDefinition, hct_id:hct.id
+      can %i[read create update], QueryDefinition, hct_id: hct.id
+
+      can :read, RequestMessage, query_definition: { hct_id: hct.id }
+      can %i[read create], RequestMessage, sender_hct_id: hct.id
+
+      can :read, ResponseMessage do |response|
+        can? :read, response.request_message
+      end
+      can :create, ResponseMessage do |response|
+        response.request_message.query_definition.id == hct.id
+      end
+
     end
 
     #   else
