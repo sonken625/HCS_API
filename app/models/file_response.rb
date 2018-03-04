@@ -1,2 +1,2 @@
-class FileResponse < ApplicationRecord
+class FileResponse < ResponseMessage
 end
