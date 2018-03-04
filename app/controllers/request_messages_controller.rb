@@ -7,7 +7,8 @@ class RequestMessagesController < ApplicationController
 
   # GET /request_messages
   def index
-    @request_messages = RequestMessage.query_definition(@query_definition).after_from_the_message_id(@request_message&.id).limit(1000).all
+    @request_messages = RequestMessage.search_with_query_definition(@query_definition).after_from_the_message_id(@request_message&.id).limit(1000).all
+
     render json: @request_messages
   end
 
