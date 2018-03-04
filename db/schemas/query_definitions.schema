@@ -1,7 +1,6 @@
 create_table :query_definitions do |t|
   t.string :search_key,null:false
   t.references :hct,foreign_key:true,null:false
-  t.integer :protocol_type,null:false
 
   t.datetime "created_at",  null: false
   t.datetime "updated_at",  null: false

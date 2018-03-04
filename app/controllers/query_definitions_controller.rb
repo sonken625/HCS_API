@@ -50,6 +50,6 @@ class QueryDefinitionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def query_params
-      params.fetch(:query_definition, {}).permit(:hct_id, :protocol_type)
+      params.fetch(:query_definition, {}).permit(:hct_id)
     end
 end

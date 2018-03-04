@@ -3,8 +3,6 @@
 class QueryDefinition < ApplicationRecord
   belongs_to :hct
   enum protocol_type: {json: 0, file: 1}
-  validates :protocol_type, presence: true
-
   validates :search_key, uniqueness: true, presence: true
   before_validation :generate_search_key
 
