@@ -11,8 +11,9 @@ class Ability
     if hct.admin?
       can :manage, :all
     elsif hct.normal?
+      can %i[read update], Hct, id: hct.id
       can :read, Firm, active: true
-      can %i[read create update], QueryDefinition, hct_id: hct.id
+      can :manage, QueryDefinition, hct_id: hct.id
 
       can :read, RequestMessage, query_definition: { hct_id: hct.id }
       can %i[read create], RequestMessage, sender_hct_id: hct.id

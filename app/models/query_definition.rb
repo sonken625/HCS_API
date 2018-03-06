@@ -18,11 +18,11 @@ class QueryDefinition < ApplicationRecord
 
   def update_search_key
     loop do
-      old_search_key = search_key
+      old_search_key = self.search_key
       search_key = SecureRandom.urlsafe_base64(24).tr('lIO0', 'sxyz')
       next if old_search_key == search_key
 
-      break token if begin
+      break search_key if begin
         update!(search_key: search_key)
       rescue StandardError
         false

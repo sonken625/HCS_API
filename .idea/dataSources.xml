@@ -7,29 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/hcs_server_development</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="Rails hcs-server: test" uuid="3a9941fe-8cc5-4a64-a858-ede8e3ee50a9">
+    <data-source source="LOCAL" name="hcs_server_production@localhost" uuid="ac3fce54-0d75-41f6-8fd7-df8b66a6d77c">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/hcs_server_test</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="Rails hcs-server: development" uuid="6c07964b-1cb0-438a-ad69-fc322f5e380b">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/hcs_server_development</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="Rails hcs-server: production" uuid="d7c99394-c7e1-4d58-b22a-d138f139ed1b">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/hcs_server_production</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/hcs_server_production</jdbc-url>
     </data-source>
   </component>
 </project>

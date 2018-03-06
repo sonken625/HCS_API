@@ -1,6 +1,6 @@
 create_table :request_messages do |t|
   t.references :query_definition,null:false
-  t.references :sender_hct,index:true
+  t.references :sender_hct
 
   t.string :message_unique_id ,null:false
 

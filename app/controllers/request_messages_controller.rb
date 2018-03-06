@@ -2,20 +2,21 @@
 
 class RequestMessagesController < ApplicationController
 
-  before_action :set_request_message, only: %i[show update destroy count_new_record]
+  before_action :set_request_message, only: %i[show update destroy index]
   before_action :set_query_definition, only: [:index]
 
   # GET /request_messages
   def index
+    logger.debug @request_message.nil?
     @request_messages = RequestMessage.search_with_query_definition(@query_definition).after_from_the_message_id(@request_message&.id).limit(1000).all
 
     render json: @request_messages
   end
 
-  def count_record
-    @count = RequestMessage.after_from_the_message_id(@request_message&.id).count
-    render json:{ message_id: @request_message.id, count: @count }
-  end
+  # def count_record
+  #   @count = RequestMessage.after_from_the_message_id(@request_message&.id).count
+  #   render json:{ message_id: @request_message.id, count: @count }
+  # end
 
   # GET /request_messages/1
   def show
@@ -36,9 +37,9 @@ class RequestMessagesController < ApplicationController
   private
 
   def set_query_definition
-    @query_definition = QueryDefinition.find_by_search_key(param[:search_key])
+    @query_definition = QueryDefinition.find_by_search_key(params[:search_key])
     if @query_definition.nil?
-      render json:{status: :error, error_code: :bad_request, message: "invalid search key"}
+      render json:{status: :error, error_code: :bad_request, message: "invalid search key"} ,status: :bad_request
       return
     end
     authorize! :read ,@query_definition
@@ -46,7 +47,8 @@ class RequestMessagesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_request_message
-    @request_message = RequestMessage.find_by(message_unique_id: params[:id])
+    logger.debug  params[:message_unique_id]
+    @request_message = RequestMessage.find_by(message_unique_id: params[:message_unique_id])
   end
 
   # Only allow a trusted parameter "white list" through.

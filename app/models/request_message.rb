@@ -5,7 +5,16 @@ class RequestMessage < ApplicationRecord
   has_many :response_message
   belongs_to :sender_hct, class_name: 'Hct'
 
+
   attribute :search_key, :string
+
+  validates :query_definition, presence: true
+  validates :search_key,presence: true
+  validates :message_unique_id, presence: true, uniqueness: true
+
+  before_validation :generate_message_unique_id
+  before_validation :set_query_definition
+
 
   scope :after_from_the_message_id, lambda { |message_id|
     where('id > ?', message_id) if message_id.present?
@@ -15,22 +24,16 @@ class RequestMessage < ApplicationRecord
     where(query_definition_id: query_definition.id)
   }
 
+
   def to_param
     message_unique_id
   end
-
-  validates :query_definition, presence: true
-  validates :search_key,presence: true
-  validates :message_unique_id, presence: true, uniqueness: true
-
-  before_validation :generate_message_unique_id
-  before_validation :set_query_definition
 
   private
 
   def generate_message_unique_id
     loop do
-      message_unique_id = SecureRandom.urlsafe_base64(24).tr('lIO0', 'nbjh')
+      message_unique_id = SecureRandom.urlsafe_base64(5).tr('lIO0', 'nbjh')
 
       unless RequestMessage.exists?(message_unique_id: message_unique_id)
         self.message_unique_id = message_unique_id
@@ -40,7 +43,13 @@ class RequestMessage < ApplicationRecord
   end
 
   def set_query_definition
-    self.query_definition = QueryDefinition.find_by_search_key(search_key)
+    query_definition = QueryDefinition.find_by_search_key(search_key)
+    if query_definition
+      self.query_definition = query_definition
+    else
+      errors.add :search_key,"が不正です"
+      throw :abort
+    end
   end
 
 end

@@ -7,9 +7,10 @@ class Hct < ApplicationRecord
   validates :authentication_token, uniqueness: true
   before_create :generate_authentication_token
 
+  has_many :request_messages
+
   belongs_to :firm
   enum role: {normal: 0, admin: 1 }
-
   def generate_authentication_token
     loop do
       token = SecureRandom.urlsafe_base64(24).tr('lIO0', 'sxyz')

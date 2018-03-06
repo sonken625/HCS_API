@@ -15,8 +15,8 @@ class QueryDefinitionsController < ApplicationController
 
   # POST /queries
   def create
-    @query_definition = QueryDefinition.new(query_params)
-    @query_definition.hct = current_hct unless can? :manage, QueryDefinition
+    @query_definition = QueryDefinition.new
+    @query_definition.hct = current_hct unless current_hct.admin?
 
     if @query_definition.save
       render json: @query_definition, status: :created, location: @query_definition
@@ -45,7 +45,7 @@ class QueryDefinitionsController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_query
-      @query_definition = QueryDefinition.find_by_search_key(param[:search_key])
+      @query_definition = QueryDefinition.find_by_search_key(params[:search_key])
     end
 
     # Only allow a trusted parameter "white list" through.
